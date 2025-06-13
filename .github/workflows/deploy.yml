@@ -29,5 +29,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages        # Deploy branch
-          folder: dist/ceyway-publication-web  # Output folder
+          folder: dist/ceyway-publication-web/browser  # Output folder
           token: ${{ secrets.GITHUB_TOKEN }}
