@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/ceyway-publication-web",
+            "outputPath": "dist/ceyway-publication-web/browser",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -46,6 +46,7 @@
                 }
               ],
               "outputHashing": "all"
+
             },
             "development": {
               "optimization": false,
