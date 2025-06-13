@@ -1,150 +1,472 @@
-<!-- Top Navbar -->
-<nav class="text-purple-800 bg-white shadow-md sticky top-0 z-50">
-  <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-    <h1 class="text-xl font-bold">CEYWAY</h1>
-    <div class="space-x-4 text-sm">
-      <a href="#home" class="hover:underline">Home</a>
-      <a href="#overview" class="hover:underline">Overview</a>
-    </div>
-  </div>
-</nav>
+<!-- Fullscreen Hero Section with Slideshow -->
+ <section id="home" class="relative w-full h-screen text-white font-sans overflow-hidden">
 
-<!-- Home Section -->
-  <section id="home" class="bg-gradient-to-br from-purple-800 to-indigo-900 text-white min-h-screen flex items-center justify-center px-6">
-    <div class="max-w-3xl text-center">
-      <h1 class="text-5xl font-extrabold leading-tight mb-6 tracking-tight">
-        CEYWAY
-      </h1>
-      <p class="text-xl font-light mb-8">
-        A Real-Time, AI-Enhanced Mobile Tour Guide App <br>for Sri Lankan Tourism
-      </p>
-      <a href="#about" class="inline-block bg-white text-purple-800 font-semibold px-6 py-3 rounded-full shadow-md hover:bg-gray-100 transition-all duration-300">
-        Explore the Project
-      </a>
+  <!-- Background Slideshow -->
+  <div class="absolute inset-0 -z-10">
+    <img
+      *ngFor="let image of images; let i = index"
+      [src]="image"
+      [class.opacity-0]="i !== currentIndex"
+      [class.opacity-100]="i === currentIndex"
+      class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out"
+      alt="Hero background"
+    />
+    <div class="absolute inset-0 bg-gradient-to-br from-black/80 via-black/50 to-transparent"></div>
+  </div>
+
+  <!-- Floating Premium Navbar -->
+  <nav class="absolute top-6 left-1/2 transform -translate-x-1/2 w-[92%] md:w-4/5 bg-white/10 backdrop-blur-lg border border-white/20 rounded-full px-6 py-3 flex items-center justify-between z-30 shadow-xl">
+    <div class="text-2xl font-bold tracking-wider text-purple-400 uppercase">
+      CEYWAY
     </div>
-  </section>
+    <div class="hidden md:flex space-x-8 text-sm font-medium text-white">
+      <a href="#overview" class="hover:text-purple-300 transition">Overview</a>
+      <a href="#problem" class="hover:text-purple-300 transition">Problem</a>
+      <a href="#objectives" class="hover:text-purple-300 transition">Objectives</a>
+      <a href="#acknowledgment" class="hover:text-purple-300 transition">Acknowledgment</a>
+      <a href="#references" class="hover:text-purple-300 transition">References</a>
+      <a href="#team" class="hover:text-purple-300 transition">Team & Supervisors</a>
+    </div>
+    <div class="md:hidden">
+      <button (click)="toggleMenu()" class="text-white">
+        <svg *ngIf="!isMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg *ngIf="isMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div *ngIf="isMenuOpen" class="absolute top-20 left-0 w-full z-20 bg-black/90 text-white py-5 px-6 md:hidden space-y-3 rounded-xl">
+    <a href="#overview" class="block hover:text-purple-300">Overview</a>
+    <a href="#problem" class="block hover:text-purple-300">Problem</a>
+     <a href="#objectives" class="block hover:text-purple-300">Objectives</a>
+    <a href="#acknowledgment" class="block hover:text-purple-300">Acknowledgment</a>
+    <a href="#references" class="block hover:text-purple-300">References</a>
+    <a href="#team" class="block hover:text-purple-300">Team & Supervisors</a>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 md:px-0">
+    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight drop-shadow-md">
+      Your Next <span class="text-purple-400">Travel Partner</span>
+    </h1>
+    <p class="mt-4 text-lg md:text-xl text-gray-200 font-light max-w-2xl drop-shadow">
+      Discover the beauty of Sri Lanka with AI-guided planning and smart travel tools.
+    </p>
+    <a
+      href="#about"
+      class="mt-8 inline-block bg-gradient-to-r from-purple-500 to-purple-700 hover:from-purple-600 hover:to-purple-800 text-white px-8 py-3 rounded-full font-medium shadow-lg transition-all duration-300 transform hover:scale-105"
+    >
+      Start Exploring
+    </a>
+  </div>
+</section>
+
 
   <!-- Overview Section -->
-  <section id="overview" class="py-16 px-6 bg-white">
-    <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl font-extrabold text-purple-800 mb-6">Project Overview</h2>
-        <p class="text-lg leading-relaxed text-gray-700 mb-6">
-          <strong>CEYWAY</strong> is an AI-powered mobile application that aims to revolutionize the tourism experience in Sri Lanka. Designed as a real-time, personalized itinerary generator, CEYWAY helps both local and international travelers plan their journeys efficiently and intuitively.
-        </p>
+  <section id="overview" class="min-h-screen flex flex-col md:flex-row bg-white px-6 py-20 max-w-7xl mx-auto">
+  <!-- Left Text Content -->
+  <div class="md:w-1/2 flex flex-col justify-center pr-10">
+    <h2 class="text-5xl font-extrabold text-purple-700 mb-8">Project Overview</h2>
+    <p class="text-xl text-gray-700 mb-6 leading-relaxed">
+      <strong>CEYWAY</strong> is an AI-powered mobile application revolutionizing tourism in Sri Lanka by providing real-time personalized itinerary generation.
+    </p>
+    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+      By integrating live data such as weather, traffic, events, and crowd density, the app generates optimized travel plans tailored to each user's preferences and budget.
+    </p>
+    <p class="text-lg text-gray-600 leading-relaxed">
+      With advanced AI and intuitive design, CEYWAY supports flexible transportation modes and unifies fragmented travel data into a seamless smart platform.
+    </p>
+  </div>
 
-        <p class="text-lg leading-relaxed text-gray-700 mb-6">
-          With its integration of real-time data such as weather, traffic, local events, and crowd density, the app offers truly dynamic trip suggestions. Users can generate optimized travel plans based on their preferences, budget, available time, and desired experience — whether they seek adventure, culture, nature, or relaxation.
-        </p>
+  <!-- Right Image Content -->
+  <div class="md:w-1/2 mt-12 md:mt-0 flex items-center justify-center">
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Sri Lanka Tourism" class="rounded-3xl shadow-lg max-w-full h-auto object-cover" />
+  </div>
+  </section>
 
-        <p class="text-lg leading-relaxed text-gray-700 mb-6">
-          The application uses advanced generative AI models to tailor recommendations, supported by intuitive design for ease of use across different user demographics. CEYWAY also supports flexible transportation choices including public transport, private hires, and walking paths, offering complete control over travel style.
-        </p>
 
-        <p class="text-lg leading-relaxed text-gray-700">
-          Ultimately, CEYWAY addresses a long-standing challenge in the tourism industry — the fragmentation of trip planning. It brings together scattered travel data into one unified, intelligent platform designed for seamless, smart, and satisfying travel in Sri Lanka.
+  <section id="problem" class="py-20 px-6 bg-gradient-to-b from-white via-purple-50 to-white">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-5xl font-extrabold text-center text-purple-800 mb-16">Research Problem</h2>
+
+    <div class="relative border-l-4 border-purple-300 pl-10 space-y-14">
+
+      <!-- Item 1 -->
+      <div class="relative">
+        <div class="absolute -left-6 top-1.5 bg-purple-600 text-white w-10 h-10 flex items-center justify-center rounded-full shadow-lg">
+          <!-- Fragment Icon -->
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-4a4 4 0 018 0v4M9 17h6m0 0v3m0 0H9m6 0a2 2 0 002-2" />
+          </svg>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-md border border-purple-100">
+          <p class="text-lg text-gray-700 leading-relaxed font-medium">
+            Tourists face <strong>fragmented and inefficient trip planning</strong> due to scattered information across multiple platforms, leading to confusion and errors.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="relative">
+        <div class="absolute -left-6 top-1.5 bg-purple-600 text-white w-10 h-10 flex items-center justify-center rounded-full shadow-lg">
+          <!-- App Focus Icon -->
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5h6M14 9h4m-4 4h6M5 5h.01M5 9h.01M5 13h.01M5 17h.01M10 5h.01M10 9h.01M10 13h.01M10 17h.01M14 17h6" />
+          </svg>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-md border border-purple-100">
+          <p class="text-lg text-gray-700 leading-relaxed font-medium">
+            Current travel apps focus narrowly on single features without integration or real-time adaptation, missing personalization and timely updates.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="relative">
+        <div class="absolute -left-6 top-1.5 bg-purple-600 text-white w-10 h-10 flex items-center justify-center rounded-full shadow-lg">
+          <!-- Transport Icon -->
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h4v11H3V10zm7-5h4v16h-4V5zm7-4h4v20h-4V1z" />
+          </svg>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-md border border-purple-100">
+          <p class="text-lg text-gray-700 leading-relaxed font-medium">
+            Lack of comprehensive transport planning and real-world budgeting assistance leaves travelers juggling between unreliable sources.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="relative">
+        <div class="absolute -left-6 top-1.5 bg-purple-600 text-white w-10 h-10 flex items-center justify-center rounded-full shadow-lg">
+          <!-- AI Icon -->
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4V2m0 20v-2m8-8h2M2 12H4m15.536 6.364l1.414 1.414M4.05 4.05l1.414 1.414M19.95 4.05l-1.414 1.414M4.05 19.95l1.414-1.414M12 8a4 4 0 100 8 4 4 0 000-8z" />
+          </svg>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-md border border-purple-100">
+          <p class="text-lg text-gray-700 leading-relaxed font-medium">
+            No existing smart, AI-driven, real-time platform consolidates travel info, causing a major gap in the Sri Lankan tourism experience.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <section id="objectives" class="py-20 bg-white px-6">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-5xl font-extrabold text-center text-purple-800 mb-16">Research Objectives</h2>
+
+    <!-- General Objective -->
+    <div class="bg-gradient-to-r from-purple-100 to-purple-200 rounded-3xl p-8 shadow-lg mb-16 text-center">
+      <h3 class="text-2xl font-bold text-purple-800 mb-4">🎯 General Objective</h3>
+      <p class="text-lg text-gray-800 leading-relaxed">
+        To design and develop an intelligent mobile application that generates real-time, personalized, and budget-friendly travel itineraries using advanced AI and real-time data integration—enhancing the tourism experience in Sri Lanka.
+      </p>
+    </div>
+
+    <!-- Specific Objectives Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div class="bg-white border border-purple-200 rounded-xl p-6 shadow-md hover:shadow-xl transition">
+        <div class="text-purple-700 text-3xl mb-4">🌐</div>
+        <h4 class="text-xl font-semibold mb-2 text-purple-800">Real-time Data Integration</h4>
+        <p class="text-gray-700 text-base">
+          Seamlessly connect APIs for weather, events, crowd levels, and traffic to ensure real-time, context-aware planning.
         </p>
       </div>
-  </section>
 
-  <!-- Motivation Section -->
-  <section id="motivation" class="py-16 px-6 bg-gray-50">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-4xl font-extrabold text-purple-800 mb-6">Motivation</h2>
-      <p class="text-lg leading-relaxed text-gray-700 mb-6">
-        The modern traveler seeks more than just destinations — they seek seamless experiences, convenience, and personalization. However, traditional travel planning is fragmented, requiring users to jump between multiple apps, websites, and services for weather updates, transport, accommodation, attractions, and budgeting.
+      <!-- Card 2 -->
+      <div class="bg-white border border-purple-200 rounded-xl p-6 shadow-md hover:shadow-xl transition">
+        <div class="text-purple-700 text-3xl mb-4">🤖</div>
+        <h4 class="text-xl font-semibold mb-2 text-purple-800">AI-driven Itinerary Generation</h4>
+        <p class="text-gray-700 text-base">
+          Use machine learning to generate dynamic travel plans tailored to user preferences.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white border border-purple-200 rounded-xl p-6 shadow-md hover:shadow-xl transition">
+        <div class="text-purple-700 text-3xl mb-4">🚌</div>
+        <h4 class="text-xl font-semibold mb-2 text-purple-800">Transport Integration</h4>
+        <p class="text-gray-700 text-base">
+          Combine public and private transport options into a unified, user-friendly interface.
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white border border-purple-200 rounded-xl p-6 shadow-md hover:shadow-xl transition">
+        <div class="text-purple-700 text-3xl mb-4">🧠</div>
+        <h4 class="text-xl font-semibold mb-2 text-purple-800">Usability & Accessibility</h4>
+        <p class="text-gray-700 text-base">
+          Design a simple, intuitive app accessible to all users, regardless of their technical background.
+        </p>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bg-white border border-purple-200 rounded-xl p-6 shadow-md hover:shadow-xl transition">
+        <div class="text-purple-700 text-3xl mb-4">⚡</div>
+        <h4 class="text-xl font-semibold mb-2 text-purple-800">Performance Optimization</h4>
+        <p class="text-gray-700 text-base">
+          Ensure smooth, responsive performance across all devices and networks.
+        </p>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="bg-white border border-purple-200 rounded-xl p-6 shadow-md hover:shadow-xl transition">
+        <div class="text-purple-700 text-3xl mb-4">📊</div>
+        <h4 class="text-xl font-semibold mb-2 text-purple-800">User Impact Evaluation</h4>
+        <p class="text-gray-700 text-base">
+          Analyze how the app improves satisfaction, planning accuracy, and travel efficiency.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <section
+  id="acknowledgment"
+  class="min-h-[500px] flex items-center justify-center bg-gray-50 px-6 py-16"
+>
+  <div
+    class="max-w-3xl bg-white rounded-lg shadow-xl flex flex-col md:flex-row overflow-hidden"
+  >
+    <!-- Purple accent bar -->
+    <div class="w-2 bg-gradient-to-b from-purple-700 to-purple-400"></div>
+
+    <!-- Content -->
+    <div class="p-10 md:p-16 text-gray-900 flex-1">
+      <h2 class="text-4xl font-extrabold mb-6 border-b-4 border-purple-600 inline-block pb-2">
+        Acknowledgment
+      </h2>
+
+      <p class="mb-6 italic text-lg leading-relaxed text-gray-700">
+        “I would like to express my heartfelt gratitude to
+        <strong class="text-purple-700">Dr. Prabhani Liyanage</strong> and
+        <strong class="text-purple-700">Mrs. Sankani Heenkenda</strong>, our
+        academic supervisors, for their expert guidance and continuous support
+        throughout the CEYWAY project. Their insights, feedback, and
+        encouragement played a vital role in the successful development of this
+        research.”
       </p>
 
-      <p class="text-lg leading-relaxed text-gray-700 mb-6">
-        CEYWAY was inspired by the growing need for a unified platform that leverages real-time data and artificial intelligence to simplify this process. With digital expectations rising, especially among tech-savvy travelers, there's a critical need for tools that feel intuitive, adaptive, and intelligent.
+      <p class="mb-6 italic text-lg leading-relaxed text-gray-700">
+        “Special thanks to the lecturers of the Department of ICT, Faculty of
+        Technology, University of Sri Jayewardenepura, for providing the
+        academic foundation and technical knowledge necessary for this project.”
       </p>
 
-      <p class="text-lg leading-relaxed text-gray-700">
-        By addressing inefficiencies in existing solutions, CEYWAY aims to empower travelers with a smart assistant that understands their preferences and responds to real-world changes—enhancing the tourism experience in Sri Lanka while showcasing its full potential.
+      <p class="italic text-lg leading-relaxed text-gray-700">
+        “Finally, I thank my family and friends for their unwavering
+        encouragement, support, and belief in my work throughout this journey.”
       </p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Scope Section -->
-  <section id="scope" class="py-16 px-6 bg-white">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-4xl font-extrabold text-purple-800 mb-6">Project Scope</h2>
 
-      <p class="text-lg leading-relaxed text-gray-700 mb-6">
-        The CEYWAY project focuses on developing a cross-platform mobile application that delivers real-time, AI-enhanced travel planning specifically for Sri Lanka’s tourism industry. The app aims to provide travelers with dynamically generated, fully customized itineraries that adapt to their preferences and real-world conditions.
-      </p>
+    <!-- References Section -->
+  <section id="references" class="py-20 px-6 bg-gradient-to-tr from-purple-50 to-white">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-4xl font-extrabold text-purple-900 mb-8 border-b-4 border-purple-700 inline-block pb-2">
+      References
+    </h2>
 
-      <p class="text-lg leading-relaxed text-gray-700 mb-6">
-        Core features include smart itinerary creation, live route optimization, and budget estimation based on transportation, accommodation, and activity costs. The platform integrates public and private transportation options, such as buses, trains, tuk-tuks, rental cars, and ride-shares.
-      </p>
+    <ul class="space-y-6 text-gray-800 text-lg list-decimal list-inside marker:text-purple-700">
+      <li class="hover:text-purple-700 transition-colors duration-300">
+        Bitrián, P., Bigné, E., & Aldás, J. (2021). Enhancing tourism experiences through real-time data personalization. <em class="italic text-gray-600">Tourism Management Perspectives</em>.
+      </li>
+      <li class="hover:text-purple-700 transition-colors duration-300">
+        Da Silva, A. L., & Da Rocha, Á. (2012). Mobile travel applications: Analysis of services and usability. <em class="italic text-gray-600">Journal of Hospitality and Tourism Technology</em>.
+      </li>
+      <li class="hover:text-purple-700 transition-colors duration-300">
+        Garcia-Lopez, M. Á., et al. (2021). Fragmentation in tourism planning: The digital gap. <em class="italic text-gray-600">Tourism Review International</em>.
+      </li>
+      <li class="hover:text-purple-700 transition-colors duration-300">
+        Lamsfus, C., et al. (2013). Smart tourism destinations: Real-time tourism data for sustainable planning. <em class="italic text-gray-600">Information and Communication Technologies in Tourism</em>.
+      </li>
+      <li class="hover:text-purple-700 transition-colors duration-300">
+        Wörndl, W., & Herzog, D. (2020). Intelligent travel planning systems. <em class="italic text-gray-600">Journal of Location Based Services</em>.
+      </li>
+    </ul>
+  </div>
+</section>
 
-      <p class="text-lg leading-relaxed text-gray-700 mb-6">
-        CEYWAY is designed to serve a wide range of users—from solo travelers to families and large groups, from locals to international tourists—supporting travel goals from leisure to business. The UI emphasizes minimal input and high usability, ensuring accessibility for all tech skill levels.
-      </p>
 
-      <p class="text-lg leading-relaxed text-gray-700">
-        This version of the project focuses on itinerary generation and real-time recommendations but does not yet include booking functionalities such as hotel or flight reservations. These features may be added in future iterations based on user feedback.
-      </p>
+
+  <!-- Team & Supervisors Section -->
+<section id="team" class="bg-gradient-to-b from-white via-purple-50 to-white py-24 px-6">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-5xl font-extrabold text-purple-900 mb-16 tracking-tight">Team & Supervisors</h2>
+
+    <!-- Project Members -->
+    <div class="mb-20">
+      <h3 class="text-3xl font-semibold text-purple-700 mb-12  inline-block pb-2">
+        Project Members
+      </h3>
+      <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Member Card Template -->
+        <div class="bg-white rounded-3xl shadow-2xl p-8 hover:shadow-3xl transition-shadow duration-300">
+          <img
+            src="assets/images/ilham.jpg"
+            alt="M.M. Ilham"
+            class="w-28 h-28 mx-auto rounded-full object-cover mb-6 ring-4 ring-purple-200 shadow-lg"
+          />
+          <h4 class="text-2xl font-bold text-purple-800 mb-1">M.M. Ilham</h4>
+          <p class="text-sm text-gray-400 mb-4 uppercase tracking-wide font-medium">ICT/20/852</p>
+          <p class="text-gray-700 text-base leading-relaxed whitespace-pre-line">
+            Software Technology<br />
+            Department of ICT,<br />
+            Faculty of Technology,<br />
+            University of Sri Jayewardenepura
+          </p>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-2xl p-8 hover:shadow-3xl transition-shadow duration-300">
+          <img
+            src="assets/images/naflan.jpg"
+            alt="M.N.M. Naflan"
+            class="w-28 h-28 mx-auto rounded-full object-cover mb-6 ring-4 ring-purple-200 shadow-lg"
+          />
+          <h4 class="text-2xl font-bold text-purple-800 mb-1">M.N.M. Naflan</h4>
+          <p class="text-sm text-gray-400 mb-4 uppercase tracking-wide font-medium">ICT/20/890</p>
+          <p class="text-gray-700 text-base leading-relaxed whitespace-pre-line">
+            Software Technology<br />
+            Department of ICT,<br />
+            Faculty of Technology,<br />
+            University of Sri Jayewardenepura
+          </p>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-2xl p-8 hover:shadow-3xl transition-shadow duration-300">
+          <img
+            src="assets/images/tharik.png"
+            alt="T.M. Tharik"
+            class="w-28 h-28 mx-auto rounded-full object-cover mb-6 ring-4 ring-purple-200 shadow-lg"
+          />
+          <h4 class="text-2xl font-bold text-purple-800 mb-1">T.M. Tharik</h4>
+          <p class="text-sm text-gray-400 mb-4 uppercase tracking-wide font-medium">ICT/20/944</p>
+          <p class="text-gray-700 text-base leading-relaxed whitespace-pre-line">
+            Software Technology<br />
+            Department of ICT,<br />
+            Faculty of Technology,<br />
+            University of Sri Jayewardenepura
+          </p>
+        </div>
+      </div>
     </div>
-  </section>
 
-  <!-- Research Problem Section -->
-  <section id="problem" class="py-16 px-6 bg-gray-50">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-4xl font-extrabold text-purple-800 mb-6">Research Problem</h2>
+    <!-- Supervisors -->
+    <div>
+      <h3 class="text-3xl font-semibold text-purple-700 mb-12 inline-block pb-2">
+        Supervisors
+      </h3>
+      <div class="grid gap-12 sm:grid-cols-2 max-w-4xl mx-auto">
+        <div class="bg-white rounded-3xl shadow-2xl p-8 hover:shadow-3xl transition-shadow duration-300">
+          <img
+            src="assets/images/prabhani.jpeg"
+            alt="Dr. P.L.M. Prabhani"
+            class="w-28 h-28 mx-auto rounded-full object-cover mb-6 ring-4 ring-purple-200 shadow-lg"
+          />
+          <h4 class="text-2xl font-bold text-purple-800 mb-1">Dr. P.L.M. Prabhani</h4>
+          <p class="text-sm text-gray-400 mb-4 uppercase tracking-wide font-medium">Academic Supervisor</p>
+          <p class="text-gray-700 text-base leading-relaxed whitespace-pre-line">
+            Department of ICT,<br />
+            Faculty of Technology,<br />
+            University of Sri Jayewardenepura
+          </p>
+        </div>
 
-      <p class="text-lg leading-relaxed text-gray-700 mb-6">
-        Tourists often face fragmented, time-consuming, and inefficient trip planning due to the lack of centralized digital solutions. Essential travel details—such as transport, weather, attractions, and event info—are scattered across different platforms, making the process overwhelming and prone to error.
-      </p>
-
-      <p class="text-lg leading-relaxed text-gray-700 mb-6">
-        Existing mobile travel applications are typically narrow in scope, focusing on a single feature like hotel booking or navigation. They lack integration, personalization, and the ability to adapt to real-time data such as sudden weather changes, traffic disruptions, or local event updates.
-      </p>
-
-      <p class="text-lg leading-relaxed text-gray-700 mb-6">
-        Additionally, these platforms fail to provide cohesive transport planning across public and private systems or assist with accurate, real-world budgeting. This leaves travelers guessing and juggling between multiple sources during their trips.
-      </p>
-
-      <p class="text-lg leading-relaxed text-gray-700">
-        The absence of a smart, real-time, AI-based platform that consolidates all travel-related elements presents a major gap. Addressing this problem is critical for enhancing user satisfaction, efficiency, and the overall quality of the Sri Lankan tourism experience.
-      </p>
+        <div class="bg-white rounded-3xl shadow-2xl p-8 hover:shadow-3xl transition-shadow duration-300">
+          <img
+            src="assets/images/sankani.jpeg"
+            alt="Mrs. Sankani Heenkenda"
+            class="w-28 h-28 mx-auto rounded-full object-cover mb-6 ring-4 ring-purple-200 shadow-lg"
+          />
+          <h4 class="text-2xl font-bold text-purple-800 mb-1">Mrs. Sankani Heenkenda</h4>
+          <p class="text-sm text-gray-400 mb-4 uppercase tracking-wide font-medium">Academic Co-Supervisor</p>
+          <p class="text-gray-700 text-base leading-relaxed whitespace-pre-line">
+            Department of ICT,<br />
+            Faculty of Technology,<br />
+            University of Sri Jayewardenepura
+          </p>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Objectives Section -->
-  <section id="objectives" class="py-16 px-6 bg-white">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-4xl font-extrabold text-purple-800 mb-6">Research Objectives</h2>
 
-      <h3 class="text-2xl font-semibold text-purple-700 mb-4">General Objective</h3>
-      <p class="text-lg leading-relaxed text-gray-700 mb-8">
-        To design and develop an intelligent mobile application that generates real-time, personalized, and budget-friendly travel itineraries using advanced AI and real-time data integration—thereby enhancing the tourism experience in Sri Lanka.
+
+
+
+    <footer class="bg-gradient-to-r from-purple-900 via-purple-800 to-purple-900 text-white pt-16 pb-10 px-6">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+
+    <!-- CEYWAY Logo & Summary -->
+    <div>
+      <h2 class="text-2xl font-extrabold mb-4">CEYWAY</h2>
+      <p class="text-sm text-purple-100 leading-relaxed">
+        An AI-powered smart tour guide app developed to enhance tourism in Sri Lanka through real-time, personalized itinerary planning.
       </p>
+      <p class="mt-4 text-xs text-purple-200">Final Year Research • Group 41</p>
+    </div>
 
-      <h3 class="text-2xl font-semibold text-purple-700 mb-4">Specific Objectives</h3>
-      <ul class="list-disc ml-6 space-y-4 text-lg text-gray-700">
-        <li>
-          <strong>Real-time Data Integration:</strong> Seamlessly connect weather APIs, event feeds, crowd levels, and traffic information to offer up-to-date, context-aware planning.
-        </li>
-        <li>
-          <strong>AI-driven Itinerary Generation:</strong> Use machine learning to analyze user preferences and generate dynamic travel plans that improve over time.
-        </li>
-        <li>
-          <strong>Transport Integration:</strong> Provide users with flexible transport options by merging public and private travel modes into a single interface.
-        </li>
-        <li>
-          <strong>Usability & Accessibility:</strong> Design an intuitive interface accessible to users of all backgrounds and technological skill levels.
-        </li>
-        <li>
-          <strong>Performance Optimization:</strong> Ensure fast, reliable app performance across devices and network conditions.
-        </li>
-        <li>
-          <strong>User Impact Evaluation:</strong> Measure improvements in travel satisfaction, time efficiency, and planning accuracy.
-        </li>
+    <!-- Quick Links -->
+    <div>
+      <h3 class="text-lg font-semibold mb-4 text-white">Quick Links</h3>
+      <ul class="space-y-2 text-sm text-purple-100">
+        <li><a href="#overview" class="hover:underline">Project Overview</a></li>
+        <li><a href="#problem-statement" class="hover:underline">Problem Statement</a></li>
+        <li><a href="#methodology" class="hover:underline">Methodology</a></li>
+        <li><a href="#outcomes" class="hover:underline">Outcomes</a></li>
+        <li><a href="#team" class="hover:underline">Team</a></li>
       </ul>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="bg-purple-800 text-white text-center p-6">
-    &copy; 2025 CEYWAY | University of Sri Jayewardenepura
-  </footer>
+    <!-- GitHub & Resources -->
+    <div>
+      <h3 class="text-lg font-semibold mb-4 text-white">Resources</h3>
+      <ul class="space-y-2 text-sm text-purple-100">
+        <li>
+          <a href="https://github.com/yourusername/frontend-repo" target="_blank" class="hover:underline">Frontend Repository</a>
+        </li>
+        <li>
+          <a href="https://github.com/yourusername/backend-repo" target="_blank" class="hover:underline">Backend Repository</a>
+        </li>
+        <li><a href="#try-ceyway" class="hover:underline">Try CEYWAY</a></li>
+        <li><a href="mailto:ceyway@research.lk" class="hover:underline">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- University Info -->
+    <div>
+      <h3 class="text-lg font-semibold mb-4 text-white">University</h3>
+      <p class="text-sm text-purple-100 leading-relaxed">
+        Faculty of Technology<br>
+        University of Sri Jayewardenepura<br>
+        Group 41 • Final Year Project 2025
+      </p>
+    </div>
+  </div>
+
+  <div class="mt-12 border-t border-purple-600 pt-6 text-center text-sm text-purple-200">
+    © 2025 CEYWAY Research Project. Developed by Group 41 for academic purposes.
+  </div>
+</footer>
+
+
