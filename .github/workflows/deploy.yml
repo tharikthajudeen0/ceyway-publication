@@ -1,0 +1,32 @@
+name: Deploy Angular to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master  # or 'master', if your main branch is named that
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'  # Match your local version if needed
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Angular project
+        run: |
+          npm run build -- --configuration production --base-href "/<ceyway-publication>/"
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages        # Deploy branch
+          folder: dist/<ceyway-publication-web>  # Output folder
