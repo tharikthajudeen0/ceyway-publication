@@ -30,3 +30,4 @@ jobs:
         with:
           branch: gh-pages        # Deploy branch
           folder: dist/ceyway-publication-web  # Output folder
+          token: ${{ secrets.GITHUB_TOKEN }}
