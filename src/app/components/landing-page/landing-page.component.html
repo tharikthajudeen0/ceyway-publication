@@ -23,8 +23,8 @@
       <a href="#overview" class="hover:text-purple-300 transition">Overview</a>
       <a href="#problem" class="hover:text-purple-300 transition">Problem</a>
       <a href="#objectives" class="hover:text-purple-300 transition">Objectives</a>
+      <a href="#methodology" class="hover:text-purple-300 transition">Methodology</a>
       <a href="#acknowledgment" class="hover:text-purple-300 transition">Acknowledgment</a>
-      <a href="#references" class="hover:text-purple-300 transition">References</a>
       <a href="#team" class="hover:text-purple-300 transition">Team & Supervisors</a>
     </div>
     <div class="md:hidden">
@@ -47,9 +47,9 @@
   <div *ngIf="isMenuOpen" class="absolute top-20 left-0 w-full z-20 bg-black/90 text-white py-5 px-6 md:hidden space-y-3 rounded-xl">
     <a href="#overview" class="block hover:text-purple-300">Overview</a>
     <a href="#problem" class="block hover:text-purple-300">Problem</a>
-     <a href="#objectives" class="block hover:text-purple-300">Objectives</a>
+    <a href="#objectives" class="block hover:text-purple-300">Objectives</a>
+    <a href="#methodology" class="block hover:text-purple-300">Methodology</a>
     <a href="#acknowledgment" class="block hover:text-purple-300">Acknowledgment</a>
-    <a href="#references" class="block hover:text-purple-300">References</a>
     <a href="#team" class="block hover:text-purple-300">Team & Supervisors</a>
   </div>
 
@@ -71,102 +71,107 @@
 </section>
 
 
-  <!-- Overview Section -->
-  <section id="overview" class="min-h-screen flex flex-col md:flex-row bg-white px-6 py-20 max-w-7xl mx-auto">
-  <!-- Left Text Content -->
-  <div class="md:w-1/2 flex flex-col justify-center pr-10">
-    <h2 class="text-5xl font-extrabold text-purple-700 mb-8">Project Overview</h2>
-    <p class="text-xl text-gray-700 mb-6 leading-relaxed">
-      <strong>CEYWAY</strong> is an AI-powered mobile application revolutionizing tourism in Sri Lanka by providing real-time personalized itinerary generation.
-    </p>
-    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-      By integrating live data such as weather, traffic, events, and crowd density, the app generates optimized travel plans tailored to each user's preferences and budget.
-    </p>
-    <p class="text-lg text-gray-600 leading-relaxed">
-      With advanced AI and intuitive design, CEYWAY supports flexible transportation modes and unifies fragmented travel data into a seamless smart platform.
-    </p>
-  </div>
+<!-- Overview Section -->
+<section id="overview" class="bg-white py-24 px-6 border-y border-purple-200">
+  <div class="max-w-5xl mx-auto space-y-12">
 
-  <!-- Right Image Content -->
-  <div class="md:w-1/2 mt-12 md:mt-0 flex items-center justify-center">
-    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Sri Lanka Tourism" class="rounded-3xl shadow-lg max-w-full h-auto object-cover" />
-  </div>
-  </section>
+    <!-- Title Block -->
+    <div class="text-center">
+      <h2 class="text-4xl sm:text-5xl font-extrabold text-purple-800 tracking-tight mb-4">
+        Project Overview
+      </h2>
+      <p class="text-md text-purple-500 uppercase tracking-wider">AI Meets Smart Tourism</p>
+    </div>
 
+    <!-- Content Block -->
+    <div class="space-y-8 text-lg leading-relaxed text-gray-700 border-t border-purple-100 pt-12">
+      <p>
+        <span class="font-semibold text-purple-700">CEYWAY</span> is an AI-powered mobile application built to revolutionize tourism in Sri Lanka by delivering real-time, personalized travel itineraries.
+      </p>
 
-  <section id="problem" class="py-20 px-6 bg-gradient-to-b from-white via-purple-50 to-white">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="text-5xl font-extrabold text-center text-purple-800 mb-16">Research Problem</h2>
-
-    <div class="relative border-l-4 border-purple-300 pl-10 space-y-14">
-
-      <!-- Item 1 -->
-      <div class="relative">
-        <div class="absolute -left-6 top-1.5 bg-purple-600 text-white w-10 h-10 flex items-center justify-center rounded-full shadow-lg">
-          <!-- Fragment Icon -->
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-4a4 4 0 018 0v4M9 17h6m0 0v3m0 0H9m6 0a2 2 0 002-2" />
-          </svg>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow-md border border-purple-100">
-          <p class="text-lg text-gray-700 leading-relaxed font-medium">
-            Tourists face <strong>fragmented and inefficient trip planning</strong> due to scattered information across multiple platforms, leading to confusion and errors.
-          </p>
-        </div>
+      <div class="border-l-4 border-purple-400 pl-4 italic text-gray-600">
+        “Personalization is no longer a luxury—it's an expectation.”
       </div>
 
-      <!-- Item 2 -->
-      <div class="relative">
-        <div class="absolute -left-6 top-1.5 bg-purple-600 text-white w-10 h-10 flex items-center justify-center rounded-full shadow-lg">
-          <!-- App Focus Icon -->
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5h6M14 9h4m-4 4h6M5 5h.01M5 9h.01M5 13h.01M5 17h.01M10 5h.01M10 9h.01M10 13h.01M10 17h.01M14 17h6" />
-          </svg>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow-md border border-purple-100">
-          <p class="text-lg text-gray-700 leading-relaxed font-medium">
-            Current travel apps focus narrowly on single features without integration or real-time adaptation, missing personalization and timely updates.
-          </p>
-        </div>
-      </div>
+      <p>
+        The app dynamically integrates data such as weather conditions, traffic congestion, local events, and crowd density to tailor travel plans specific to each user's preferences and budget.
+      </p>
 
-      <!-- Item 3 -->
-      <div class="relative">
-        <div class="absolute -left-6 top-1.5 bg-purple-600 text-white w-10 h-10 flex items-center justify-center rounded-full shadow-lg">
-          <!-- Transport Icon -->
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h4v11H3V10zm7-5h4v16h-4V5zm7-4h4v20h-4V1z" />
-          </svg>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow-md border border-purple-100">
-          <p class="text-lg text-gray-700 leading-relaxed font-medium">
-            Lack of comprehensive transport planning and real-world budgeting assistance leaves travelers juggling between unreliable sources.
-          </p>
-        </div>
-      </div>
-
-      <!-- Item 4 -->
-      <div class="relative">
-        <div class="absolute -left-6 top-1.5 bg-purple-600 text-white w-10 h-10 flex items-center justify-center rounded-full shadow-lg">
-          <!-- AI Icon -->
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4V2m0 20v-2m8-8h2M2 12H4m15.536 6.364l1.414 1.414M4.05 4.05l1.414 1.414M19.95 4.05l-1.414 1.414M4.05 19.95l1.414-1.414M12 8a4 4 0 100 8 4 4 0 000-8z" />
-          </svg>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow-md border border-purple-100">
-          <p class="text-lg text-gray-700 leading-relaxed font-medium">
-            No existing smart, AI-driven, real-time platform consolidates travel info, causing a major gap in the Sri Lankan tourism experience.
-          </p>
-        </div>
-      </div>
-
+      <p>
+        Combining AI intelligence with intuitive UI design, CEYWAY supports multiple modes of transport and bridges the gap between scattered tourism data sources, offering a unified and intelligent travel planning experience.
+      </p>
     </div>
   </div>
 </section>
 
 
 
-  <section id="objectives" class="py-20 bg-white px-6">
+<section id="problem" class="py-20 px-6 bg-gradient-to-r from-purple-50 to-white">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-5xl font-extrabold text-purple-900 mb-16 tracking-wide">
+      Research Problem
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <!-- Card 1 -->
+      <div class="bg-white p-8 rounded-3xl shadow-xl border border-purple-200 hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center">
+        <div class="bg-purple-600 text-white p-5 rounded-full mb-6 shadow-md">
+          <!-- Fragment Icon -->
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-4a4 4 0 018 0v4M9 17h6m0 0v3m0 0H9m6 0a2 2 0 002-2" />
+          </svg>
+        </div>
+        <p class="text-lg text-gray-800 font-semibold leading-relaxed">
+          Tourists face <strong>fragmented and inefficient trip planning</strong> due to scattered information across multiple platforms, leading to confusion and errors.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white p-8 rounded-3xl shadow-xl border border-purple-200 hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center">
+        <div class="bg-purple-600 text-white p-5 rounded-full mb-6 shadow-md">
+          <!-- App Focus Icon -->
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5h6M14 9h4m-4 4h6M5 5h.01M5 9h.01M5 13h.01M5 17h.01M10 5h.01M10 9h.01M10 13h.01M10 17h.01M14 17h6" />
+          </svg>
+        </div>
+        <p class="text-lg text-gray-800 font-semibold leading-relaxed">
+          Current travel apps focus narrowly on single features without integration or real-time adaptation, missing personalization and timely updates.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white p-8 rounded-3xl shadow-xl border border-purple-200 hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center">
+        <div class="bg-purple-600 text-white p-5 rounded-full mb-6 shadow-md">
+          <!-- Transport Icon -->
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h4v11H3V10zm7-5h4v16h-4V5zm7-4h4v20h-4V1z" />
+          </svg>
+        </div>
+        <p class="text-lg text-gray-800 font-semibold leading-relaxed">
+          Lack of comprehensive transport planning and real-world budgeting assistance leaves travelers juggling between unreliable sources.
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white p-8 rounded-3xl shadow-xl border border-purple-200 hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center">
+        <div class="bg-purple-600 text-white p-5 rounded-full mb-6 shadow-md">
+          <!-- AI Icon -->
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4V2m0 20v-2m8-8h2M2 12H4m15.536 6.364l1.414 1.414M4.05 4.05l1.414 1.414M19.95 4.05l-1.414 1.414M4.05 19.95l1.414-1.414M12 8a4 4 0 100 8 4 4 0 000-8z" />
+          </svg>
+        </div>
+        <p class="text-lg text-gray-800 font-semibold leading-relaxed">
+          No existing smart, AI-driven, real-time platform consolidates travel info, causing a major gap in the Sri Lankan tourism experience.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="objectives" class="py-20 bg-white px-6">
   <div class="max-w-6xl mx-auto">
     <h2 class="text-5xl font-extrabold text-center text-purple-800 mb-16">Research Objectives</h2>
 
@@ -238,13 +243,103 @@
 </section>
 
 
-  <section
-  id="acknowledgment"
-  class="min-h-[500px] flex items-center justify-center bg-gray-50 px-6 py-16"
->
-  <div
-    class="max-w-3xl bg-white rounded-lg shadow-xl flex flex-col md:flex-row overflow-hidden"
-  >
+<section id="methodology" class="bg-white py-20 px-6">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-4xl sm:text-5xl font-extrabold text-purple-800 text-center mb-12">Methodology</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+      <!-- Agile Methodology -->
+      <div class="bg-purple-50 border-l-4 border-purple-600 rounded-xl p-6 shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-purple-800 mb-2">Agile Methodology</h3>
+        <p class="text-gray-700 text-sm mb-4">
+          Followed a flexible and iterative development cycle with frequent reviews and sprint-based collaboration, ensuring seamless coordination across all platforms.
+        </p>
+        <div class="flex items-center gap-3 text-xs text-purple-700 font-medium mt-4">
+          <img src="assets/icons/github.png" class="w-4 h-4" alt="GitHub" />
+          <span>GitHub</span>
+          <img src="assets/icons/slack.png" class="w-4 h-4 ml-4" alt="Slack" />
+          <span>Slack</span>
+        </div>
+      </div>
+
+      <!-- User-Centered Design -->
+      <div class="bg-purple-50 border-l-4 border-purple-600 rounded-xl p-6 shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-purple-800 mb-2">User-Centered Design (UCD)</h3>
+        <p class="text-gray-700 text-sm mb-4">
+          Designed the app focusing on real-world user behavior. Wireframes and prototypes were created to validate interaction flows and visual experience.
+        </p>
+        <div class="flex items-center gap-3 text-xs text-purple-700 font-medium mt-4">
+          <img src="assets/icons/figma.png" class="w-4 h-4" alt="Figma" />
+          <span>Figma</span>
+        </div>
+      </div>
+
+      <!-- RAG Structure Development -->
+      <div class="bg-purple-50 border-l-4 border-purple-600 rounded-xl p-6 shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-purple-800 mb-2">RAG Structure Development</h3>
+        <p class="text-gray-700 text-sm mb-4">
+          Integrated a Retrieval-Augmented Generation structure to enhance contextual responses, powered by OpenAI’s large language models.
+        </p>
+        <div class="flex items-center gap-3 text-xs text-purple-700 font-medium mt-4">
+          <img src="assets/icons/openai.png" class="w-4 h-4" alt="OpenAI" />
+          <span>OpenAI</span>
+        </div>
+      </div>
+
+      <!-- Quality Assurance -->
+      <div class="bg-purple-50 border-l-4 border-purple-600 rounded-xl p-6 shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-purple-800 mb-2">Quality Assurance</h3>
+        <p class="text-gray-700 text-sm mb-4">
+          Rigorous testing of APIs and platform reliability using automated and manual validation tools ensured robust app performance.
+        </p>
+        <div class="flex items-center gap-3 text-xs text-purple-700 font-medium mt-4">
+          <img src="assets/icons/postman.png" class="w-4 h-4" alt="Postman" />
+          <span>Postman</span>
+        </div>
+      </div>
+
+      <!-- Data Collection -->
+      <div class="bg-purple-50 border-l-4 border-purple-600 rounded-xl p-6 shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-purple-800 mb-2">Data Collection</h3>
+        <p class="text-gray-700 text-sm mb-4">
+          Real-time trip recommendations powered by dynamic routing, weather conditions, and scraped content from reliable travel sources.
+        </p>
+        <div class="flex items-center gap-3 text-xs text-purple-700 font-medium mt-4">
+          <img src="assets/icons/googlemaps.jpg" class="w-4 h-4" alt="Google Maps" />
+          <span>Google Maps API</span>
+          <img src="assets/icons/openweather.png" class="w-4 h-4 ml-4" alt="Weather" />
+          <span>OpenWeather</span>
+          <img src="assets/icons/openrouteservice.png" class="w-4 h-4 ml-4" alt="ORS" />
+          <span>ORS</span>
+        </div>
+      </div>
+
+      <!-- System Deployment -->
+      <div class="bg-purple-50 border-l-4 border-purple-600 rounded-xl p-6 shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-purple-800 mb-2">System Architecture</h3>
+        <p class="text-gray-700 text-sm mb-4">
+          The mobile app was developed using React Native, supported by a Spring Boot backend and PostgreSQL database. Research outputs are published via an Angular-based web portal.
+        </p>
+        <div class="flex items-center gap-3 text-xs text-purple-700 font-medium mt-4 flex-wrap">
+          <img src="assets/icons/reactnative.png" class="w-4 h-4" alt="React Native" />
+          <span>React Native</span>
+          <img src="assets/icons/springboot.png" class="w-4 h-4 ml-4" alt="Spring Boot" />
+          <span>Spring Boot</span>
+          <img src="assets/icons/postgres.jpg" class="w-4 h-4 ml-4" alt="PostgreSQL" />
+          <span>PostgreSQL</span>
+          <img src="assets/icons/angular.jpg" class="w-4 h-4 ml-4" alt="Angular" />
+          <span>Angular</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="acknowledgment" class="min-h-[500px] flex items-center justify-center bg-gray-50 px-6 py-16">
+  <div class="max-w-3xl bg-white rounded-lg shadow-xl flex flex-col md:flex-row overflow-hidden">
     <!-- Purple accent bar -->
     <div class="w-2 bg-gradient-to-b from-purple-700 to-purple-400"></div>
 
@@ -255,7 +350,7 @@
       </h2>
 
       <p class="mb-6 italic text-lg leading-relaxed text-gray-700">
-        “I would like to express my heartfelt gratitude to
+        “We would like to express our heartfelt gratitude to
         <strong class="text-purple-700">Dr. Prabhani Liyanage</strong> and
         <strong class="text-purple-700">Mrs. Sankani Heenkenda</strong>, our
         academic supervisors, for their expert guidance and continuous support
@@ -271,7 +366,7 @@
       </p>
 
       <p class="italic text-lg leading-relaxed text-gray-700">
-        “Finally, I thank my family and friends for their unwavering
+        “Finally, We thank our family and friends for their unwavering
         encouragement, support, and belief in my work throughout this journey.”
       </p>
     </div>
@@ -279,184 +374,129 @@
 </section>
 
 
-    <!-- References Section -->
-  <section id="references" class="py-20 px-6 bg-gradient-to-tr from-purple-50 to-white">
-  <div class="max-w-4xl mx-auto">
-    <h2 class="text-4xl font-extrabold text-purple-900 mb-8 border-b-4 border-purple-700 inline-block pb-2">
-      References
-    </h2>
-
-    <ul class="space-y-6 text-gray-800 text-lg list-decimal list-inside marker:text-purple-700">
-      <li class="hover:text-purple-700 transition-colors duration-300">
-        Bitrián, P., Bigné, E., & Aldás, J. (2021). Enhancing tourism experiences through real-time data personalization. <em class="italic text-gray-600">Tourism Management Perspectives</em>.
-      </li>
-      <li class="hover:text-purple-700 transition-colors duration-300">
-        Da Silva, A. L., & Da Rocha, Á. (2012). Mobile travel applications: Analysis of services and usability. <em class="italic text-gray-600">Journal of Hospitality and Tourism Technology</em>.
-      </li>
-      <li class="hover:text-purple-700 transition-colors duration-300">
-        Garcia-Lopez, M. Á., et al. (2021). Fragmentation in tourism planning: The digital gap. <em class="italic text-gray-600">Tourism Review International</em>.
-      </li>
-      <li class="hover:text-purple-700 transition-colors duration-300">
-        Lamsfus, C., et al. (2013). Smart tourism destinations: Real-time tourism data for sustainable planning. <em class="italic text-gray-600">Information and Communication Technologies in Tourism</em>.
-      </li>
-      <li class="hover:text-purple-700 transition-colors duration-300">
-        Wörndl, W., & Herzog, D. (2020). Intelligent travel planning systems. <em class="italic text-gray-600">Journal of Location Based Services</em>.
-      </li>
-    </ul>
-  </div>
-</section>
+<!-- References Section -->
 
 
 
-  <!-- Team & Supervisors Section -->
-<section id="team" class="bg-gradient-to-b from-white via-purple-50 to-white py-24 px-6">
+<!-- Team & Supervisors Section -->
+<section id="team" class="relative bg-gradient-to-br from-purple-50 via-white to-purple-100 py-24 px-6 overflow-hidden">
   <div class="max-w-7xl mx-auto text-center">
-    <h2 class="text-5xl font-extrabold text-purple-900 mb-16 tracking-tight">Team & Supervisors</h2>
+    <h2 class="text-5xl font-extrabold text-purple-900 mb-20 tracking-tight">Our Team</h2>
 
-    <!-- Project Members -->
-    <div class="mb-20">
-      <h3 class="text-3xl font-semibold text-purple-700 mb-12  inline-block pb-2">
-        Project Members
-      </h3>
-      <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
-        <!-- Member Card Template -->
-        <div class="bg-white rounded-3xl shadow-2xl p-8 hover:shadow-3xl transition-shadow duration-300">
-          <img
-            src="assets/images/ilham.jpg"
-            alt="M.M. Ilham"
-            class="w-28 h-28 mx-auto rounded-full object-cover mb-6 ring-4 ring-purple-200 shadow-lg"
-          />
-          <h4 class="text-2xl font-bold text-purple-800 mb-1">M.M. Ilham</h4>
-          <p class="text-sm text-gray-400 mb-4 uppercase tracking-wide font-medium">ICT/20/852</p>
-          <p class="text-gray-700 text-base leading-relaxed whitespace-pre-line">
-            Software Technology<br />
-            Department of ICT,<br />
-            Faculty of Technology,<br />
-            University of Sri Jayewardenepura
-          </p>
+    <!-- Team Members -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 place-items-center mb-28">
+      <!-- Member Card -->
+      <div class="relative backdrop-blur-xl bg-white/30 border border-purple-200 rounded-3xl p-8 w-full max-w-sm shadow-2xl hover:shadow-purple-300 transition duration-300">
+        <img src="assets/images/ilham.jpg" alt="M.M. Ilham" class="w-28 h-28 mx-auto rounded-full object-cover border-4 border-white shadow-lg mb-4" />
+        <h4 class="text-2xl font-bold text-purple-900">M.M. Ilham</h4>
+        <p class="text-sm text-purple-700 uppercase mb-3 tracking-widest">ICT/20/852</p>
+        <div class="text-gray-700 text-sm leading-relaxed">
+          Software Technology<br />
+          Department of ICT,<br />
+          Faculty of Technology,<br />
+          University of Sri Jayewardenepura
         </div>
+      </div>
 
-        <div class="bg-white rounded-3xl shadow-2xl p-8 hover:shadow-3xl transition-shadow duration-300">
-          <img
-            src="assets/images/naflan.jpg"
-            alt="M.N.M. Naflan"
-            class="w-28 h-28 mx-auto rounded-full object-cover mb-6 ring-4 ring-purple-200 shadow-lg"
-          />
-          <h4 class="text-2xl font-bold text-purple-800 mb-1">M.N.M. Naflan</h4>
-          <p class="text-sm text-gray-400 mb-4 uppercase tracking-wide font-medium">ICT/20/890</p>
-          <p class="text-gray-700 text-base leading-relaxed whitespace-pre-line">
-            Software Technology<br />
-            Department of ICT,<br />
-            Faculty of Technology,<br />
-            University of Sri Jayewardenepura
-          </p>
+      <!-- Naflan -->
+      <div class="relative backdrop-blur-xl bg-white/30 border border-purple-200 rounded-3xl p-8 w-full max-w-sm shadow-2xl hover:shadow-purple-300 transition duration-300">
+        <img src="assets/images/naflan.jpg" alt="M.N.M. Naflan" class="w-28 h-28 mx-auto rounded-full object-cover border-4 border-white shadow-lg mb-4" />
+        <h4 class="text-2xl font-bold text-purple-900">M.N.M. Naflan</h4>
+        <p class="text-sm text-purple-700 uppercase mb-3 tracking-widest">ICT/20/890</p>
+        <div class="text-gray-700 text-sm leading-relaxed">
+          Software Technology<br />
+          Department of ICT,<br />
+          Faculty of Technology,<br />
+          University of Sri Jayewardenepura
         </div>
+      </div>
 
-        <div class="bg-white rounded-3xl shadow-2xl p-8 hover:shadow-3xl transition-shadow duration-300">
-          <img
-            src="assets/images/tharik.png"
-            alt="T.M. Tharik"
-            class="w-28 h-28 mx-auto rounded-full object-cover mb-6 ring-4 ring-purple-200 shadow-lg"
-          />
-          <h4 class="text-2xl font-bold text-purple-800 mb-1">T.M. Tharik</h4>
-          <p class="text-sm text-gray-400 mb-4 uppercase tracking-wide font-medium">ICT/20/944</p>
-          <p class="text-gray-700 text-base leading-relaxed whitespace-pre-line">
-            Software Technology<br />
-            Department of ICT,<br />
-            Faculty of Technology,<br />
-            University of Sri Jayewardenepura
-          </p>
+      <!-- Tharik -->
+      <div class="relative backdrop-blur-xl bg-white/30 border border-purple-200 rounded-3xl p-8 w-full max-w-sm shadow-2xl hover:shadow-purple-300 transition duration-300">
+        <img src="assets/images/tharik.png" alt="T.M. Tharik" class="w-28 h-28 mx-auto rounded-full object-cover border-4 border-white shadow-lg mb-4" />
+        <h4 class="text-2xl font-bold text-purple-900">T.M. Tharik</h4>
+        <p class="text-sm text-purple-700 uppercase mb-3 tracking-widest">ICT/20/944</p>
+        <div class="text-gray-700 text-sm leading-relaxed">
+          Software Technology<br />
+          Department of ICT,<br />
+          Faculty of Technology,<br />
+          University of Sri Jayewardenepura
         </div>
       </div>
     </div>
 
     <!-- Supervisors -->
-    <div>
-      <h3 class="text-3xl font-semibold text-purple-700 mb-12 inline-block pb-2">
-        Supervisors
-      </h3>
-      <div class="grid gap-12 sm:grid-cols-2 max-w-4xl mx-auto">
-        <div class="bg-white rounded-3xl shadow-2xl p-8 hover:shadow-3xl transition-shadow duration-300">
-          <img
-            src="assets/images/prabhani.jpeg"
-            alt="Dr. P.L.M. Prabhani"
-            class="w-28 h-28 mx-auto rounded-full object-cover mb-6 ring-4 ring-purple-200 shadow-lg"
-          />
-          <h4 class="text-2xl font-bold text-purple-800 mb-1">Dr. P.L.M. Prabhani</h4>
-          <p class="text-sm text-gray-400 mb-4 uppercase tracking-wide font-medium">Academic Supervisor</p>
-          <p class="text-gray-700 text-base leading-relaxed whitespace-pre-line">
-            Department of ICT,<br />
-            Faculty of Technology,<br />
-            University of Sri Jayewardenepura
-          </p>
-        </div>
+    <h3 class="text-3xl font-semibold text-purple-800 mb-16 tracking-tight">Supervisors</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 place-items-center">
+      <!-- Supervisor -->
+      <div class="relative backdrop-blur-xl bg-white/30 border border-purple-200 rounded-3xl p-8 w-full max-w-md shadow-2xl hover:shadow-purple-300 transition duration-300">
+        <img src="assets/images/prabhani.jpeg" alt="Dr. P.L.M. Prabhani" class="w-28 h-28 mx-auto rounded-full object-cover border-4 border-white shadow-lg mb-4" />
+        <h4 class="text-2xl font-bold text-purple-900">Dr. P.L.M. Prabhani</h4>
+        <p class="text-sm text-purple-700 uppercase mb-3 tracking-widest">Academic Supervisor</p>
+        <p class="text-gray-700 text-sm leading-relaxed">
+          Department of ICT,<br />
+          Faculty of Technology,<br />
+          University of Sri Jayewardenepura
+        </p>
+      </div>
 
-        <div class="bg-white rounded-3xl shadow-2xl p-8 hover:shadow-3xl transition-shadow duration-300">
-          <img
-            src="assets/images/sankani.jpeg"
-            alt="Mrs. Sankani Heenkenda"
-            class="w-28 h-28 mx-auto rounded-full object-cover mb-6 ring-4 ring-purple-200 shadow-lg"
-          />
-          <h4 class="text-2xl font-bold text-purple-800 mb-1">Mrs. Sankani Heenkenda</h4>
-          <p class="text-sm text-gray-400 mb-4 uppercase tracking-wide font-medium">Academic Co-Supervisor</p>
-          <p class="text-gray-700 text-base leading-relaxed whitespace-pre-line">
-            Department of ICT,<br />
-            Faculty of Technology,<br />
-            University of Sri Jayewardenepura
-          </p>
-        </div>
+      <div class="relative backdrop-blur-xl bg-white/30 border border-purple-200 rounded-3xl p-8 w-full max-w-md shadow-2xl hover:shadow-purple-300 transition duration-300">
+        <img src="assets/images/sankani.jpeg" alt="Mrs. Sankani Heenkenda" class="w-28 h-28 mx-auto rounded-full object-cover border-4 border-white shadow-lg mb-4" />
+        <h4 class="text-2xl font-bold text-purple-900">Mrs. Sankani Heenkenda</h4>
+        <p class="text-sm text-purple-700 uppercase mb-3 tracking-widest">Academic Co-Supervisor</p>
+        <p class="text-gray-700 text-sm leading-relaxed">
+          Department of ICT,<br />
+          Faculty of Technology,<br />
+          University of Sri Jayewardenepura
+        </p>
       </div>
     </div>
   </div>
 </section>
 
 
+<footer class="bg-gradient-to-br from-purple-950 via-purple-900 to-purple-950 text-white pt-20 pb-12 px-6">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
 
-
-
-    <footer class="bg-gradient-to-r from-purple-900 via-purple-800 to-purple-900 text-white pt-16 pb-10 px-6">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
-
-    <!-- CEYWAY Logo & Summary -->
+    <!-- Logo & Summary -->
     <div>
-      <h2 class="text-2xl font-extrabold mb-4">CEYWAY</h2>
-      <p class="text-sm text-purple-100 leading-relaxed">
-        An AI-powered smart tour guide app developed to enhance tourism in Sri Lanka through real-time, personalized itinerary planning.
+      <h2 class="text-3xl font-extrabold tracking-tight mb-4">CEYWAY</h2>
+      <p class="text-sm text-purple-200 leading-relaxed">
+        An AI-powered smart tour guide app designed to personalize and revolutionize travel experiences in Sri Lanka.
       </p>
-      <p class="mt-4 text-xs text-purple-200">Final Year Research • Group 41</p>
+      <p class="mt-5 text-xs text-purple-400 italic">Final Year Research • Group 41</p>
     </div>
 
     <!-- Quick Links -->
     <div>
-      <h3 class="text-lg font-semibold mb-4 text-white">Quick Links</h3>
-      <ul class="space-y-2 text-sm text-purple-100">
-        <li><a href="#overview" class="hover:underline">Project Overview</a></li>
-        <li><a href="#problem-statement" class="hover:underline">Problem Statement</a></li>
-        <li><a href="#methodology" class="hover:underline">Methodology</a></li>
-        <li><a href="#outcomes" class="hover:underline">Outcomes</a></li>
-        <li><a href="#team" class="hover:underline">Team</a></li>
+      <h3 class="text-xl font-semibold mb-5 text-white">Quick Links</h3>
+      <ul class="space-y-3 text-sm text-purple-200">
+        <li><a href="#overview" class="hover:text-white hover:pl-1 transition-all duration-300">Project Overview</a></li>
+        <li><a href="#problem" class="hover:text-white hover:pl-1 transition-all duration-300">Problem Statement</a></li>
+        <li><a href="#methodology" class="hover:text-white hover:pl-1 transition-all duration-300">Methodology</a></li>
+        <li><a href="#team" class="hover:text-white hover:pl-1 transition-all duration-300">Team</a></li>
       </ul>
     </div>
 
     <!-- GitHub & Resources -->
     <div>
-      <h3 class="text-lg font-semibold mb-4 text-white">Resources</h3>
-      <ul class="space-y-2 text-sm text-purple-100">
+      <h3 class="text-xl font-semibold mb-5 text-white">Resources</h3>
+      <ul class="space-y-3 text-sm text-purple-200">
         <li>
-          <a href="https://github.com/yourusername/frontend-repo" target="_blank" class="hover:underline">Frontend Repository</a>
+          <a href="https://github.com/Naflan-MNM/Ceyway" target="_blank" class="hover:text-white hover:pl-1 transition-all duration-300">Frontend Repository</a>
         </li>
         <li>
-          <a href="https://github.com/yourusername/backend-repo" target="_blank" class="hover:underline">Backend Repository</a>
+          <a href="https://github.com/tharikthajudeen0/ceyway" target="_blank" class="hover:text-white hover:pl-1 transition-all duration-300">Backend Repository</a>
         </li>
-        <li><a href="#try-ceyway" class="hover:underline">Try CEYWAY</a></li>
-        <li><a href="mailto:ceyway@research.lk" class="hover:underline">Contact Us</a></li>
+        <li><a href="#try-ceyway" class="hover:text-white hover:pl-1 transition-all duration-300">Try CEYWAY</a></li>
+        <li><a href="mailto:tharikthajudeen00@gmail.com" class="hover:text-white hover:pl-1 transition-all duration-300">Contact Us</a></li>
       </ul>
     </div>
 
     <!-- University Info -->
     <div>
-      <h3 class="text-lg font-semibold mb-4 text-white">University</h3>
-      <p class="text-sm text-purple-100 leading-relaxed">
+      <h3 class="text-xl font-semibold mb-5 text-white">University</h3>
+      <p class="text-sm text-purple-200 leading-relaxed">
         Faculty of Technology<br>
         University of Sri Jayewardenepura<br>
         Group 41 • Final Year Project 2025
@@ -464,9 +504,11 @@
     </div>
   </div>
 
-  <div class="mt-12 border-t border-purple-600 pt-6 text-center text-sm text-purple-200">
-    © 2025 CEYWAY Research Project. Developed by Group 41 for academic purposes.
+  <!-- Bottom Line -->
+  <div class="mt-14 border-t border-purple-800 pt-6 text-center text-xs text-purple-400">
+    © 2025 CEYWAY Research Project. Developed by <span class="text-purple-200">Group 41</span> for academic purposes.
   </div>
 </footer>
+
 
 
